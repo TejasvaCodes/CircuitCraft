@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root { font-family: 'DM Sans', sans-serif; color: #e8edf5; background: #0b1220; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: radial-gradient(ellipse at 50% -20%, #1b3150 0, #0b1220 58%); }
+.shell { max-width: 1080px; margin: 0 auto; padding: 0 34px; }
+.topbar { height: 82px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ffffff12; }
+.brand { display: flex; align-items: center; gap: 11px; color: #f5f8fc; text-decoration: none; font: 700 19px 'Space Grotesk'; letter-spacing: -.5px; }
+.brand-mark { width: 32px; height: 32px; display: grid; place-items: center; border-radius: 9px; background: #67e8c1; color: #10221e; font-weight: 700; }
+.top-tag, .eyebrow { color: #76dfc1; font-size: 10px; font-weight: 700; letter-spacing: 1.7px; }
+.hero { padding: 90px 0 76px; text-align: center; }
+.hero h1 { margin: 17px 0 15px; font: 600 clamp(38px, 6vw, 62px)/1.08 'Space Grotesk'; letter-spacing: -2.8px; }
+.hero h1 span { color: #7ce4c5; }
+.hero p { color: #9aa9bd; font-size: 15px; }
+.search-form { max-width: 680px; margin: 34px auto 13px; display: flex; align-items: center; gap: 12px; padding: 8px 9px 8px 17px; background: #172337; border: 1px solid #35445b; border-radius: 13px; box-shadow: 0 16px 55px #0005; }
+.search-icon { font-size: 27px; color: #8ba0b7; }
+.search-form input { min-width: 0; flex: 1; background: transparent; border: 0; outline: 0; color: #f2f6fc; font: 14px 'DM Sans'; }
+.search-form input::placeholder { color: #7e8da2; }
+.search-form button { border: 0; border-radius: 9px; padding: 13px 19px; background: #72dfbf; color: #10251f; font-weight: 700; cursor: pointer; }
+.search-form button:disabled { opacity: .55; cursor: not-allowed; }
+.search-hint { color: #718198; font-size: 11px; }
+.results-section { max-width: 780px; margin: 0 auto; min-height: 230px; }
+.section-heading { display: flex; justify-content: space-between; align-items: end; margin-bottom: 19px; }
+.section-heading h2 { margin: 7px 0 0; font: 600 22px 'Space Grotesk'; }
+.result-count { color: #9babc0; font-size: 12px; }
+.empty-state { min-height: 170px; border: 1px dashed #35445a; border-radius: 14px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 9px; color: #8191a7; text-align: center; padding: 25px; }
+.empty-state strong { color: #dce5f0; font-size: 14px; }
+.empty-state span { font-size: 12px; }
+.empty-icon { font-size: 30px; color: #70dabc; }
+.result-list { display: grid; gap: 10px; }
+.part-card { display: flex; align-items: center; gap: 15px; padding: 17px; background: #152236; border: 1px solid #293b54; border-radius: 12px; }
+.part-symbol { width: 40px; height: 40px; display: grid; place-items: center; background: #203c4a; color: #7ce4c5; border-radius: 10px; font-size: 19px; }
+.part-info { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.part-info strong { font: 600 14px 'Space Grotesk'; color: #edf4fb; }
+.part-info span { color: #95a6bb; font-size: 12px; }
+.source-pill { font-size: 9px; letter-spacing: 1px; color: #7ce4c5; border: 1px solid #397b6c; border-radius: 20px; padding: 5px 8px; }
+.timestamp { color: #718198; font-size: 11px; text-align: right; }
+.notice { padding: 14px 16px; border-radius: 10px; font-size: 13px; }
+.error { background: #48252c; border: 1px solid #85414c; color: #ffc6cb; }
+.spinner { width: 20px; height: 20px; border: 2px solid #43566e; border-top-color: #7ce4c5; border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+footer { margin-top: 80px; padding: 24px 0; border-top: 1px solid #ffffff12; text-align: center; color: #64758d; font-size: 9px; letter-spacing: 1.5px; }
+footer span { color: #70dabc; padding: 0 5px; }
+@media (max-width: 600px) { .shell { padding: 0 18px; } .top-tag { font-size: 8px; } .hero { padding: 65px 0 55px; } .hero h1 { letter-spacing: -1.8px; } .search-form { gap: 7px; padding-left: 11px; } .search-form button { padding: 12px 11px; font-size: 12px; } .search-form input { font-size: 12px; } }
