@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import DemoProject from "./DemoProject.jsx";
 
 const examples = [
   "Build a smart plant watering system with soil moisture sensing",
@@ -82,7 +83,7 @@ export default function App() {
         <nav className="main-nav" aria-label="Main navigation">
           <button className={tab === "planner" ? "nav-link selected" : "nav-link"} onClick={() => setTab("planner")}><span>⌂</span> Workspace</button>
           <button className={tab === "parts" ? "nav-link selected" : "nav-link"} onClick={() => setTab("parts")}><span>▦</span> Components</button>
-          <button className={tab === "builds" ? "nav-link selected" : "nav-link"} onClick={() => setTab("builds")}><span>▱</span> My Builds</button>
+          <button className={tab === "builds" || tab === "demo" ? "nav-link selected" : "nav-link"} onClick={() => setTab("builds")}><span>▱</span> My Builds</button>
         </nav>
         <div className="profile-dot">C</div>
       </header>
@@ -156,7 +157,8 @@ export default function App() {
         {results.length > 0 && <div className="part-results"><div className="results-meta">{total.toLocaleString()} matches · Retrieved {retrievedAt ? new Date(retrievedAt).toLocaleString() : "just now"}</div>{results.map((part, index) => <article className="part-card" key={part.manufacturerPartNumber + index}><div><strong>{part.manufacturerPartNumber}</strong><span>{part.manufacturer || "Manufacturer not listed"}</span></div><span className="source-pill">NEXAR</span></article>)}<p className="safety-note">Availability and pricing can change. Verify current stock, price and datasheet before purchasing or designing around a part.</p></div>}
       </section>}
 
-      {tab === "builds" && <section className="parts-workspace builds-empty"><div className="panel-kicker">YOUR WORKSPACE</div><h2>My Builds</h2><p className="muted">Your generated project plans will appear here in a future update. For now, create a plan in Workspace.</p><button className="primary-button" onClick={() => setTab("planner")}>Start a project →</button></section>}
+      {tab === "builds" && <section className="parts-workspace builds-empty"><div className="panel-kicker">YOUR WORKSPACE · DEMO BUILD</div><h2>See a complete project, start to finish.</h2><p className="muted">Explore a worked example of CircuitCraft turning an idea into a prototype: mechanism, components, wiring map, firmware logic, assembly and testing.</p><article className="demo-launch-card"><div><span className="source-pill">GUIDED DEMO</span><h3>Automatic Pani Puri Plate Dispenser</h3><p>Detect a customer, slide one plate to the pickup point, confirm pickup and reset for the next customer.</p><div className="demo-tags"><span>ESP32</span><span>Motorized tray</span><span>Sensor feedback</span><span>Prototype V1</span></div></div><button className="primary-button" onClick={() => setTab("demo")}>Open full project →</button></article><button className="text-action" onClick={() => setTab("planner")}>← Create my own project</button></section>}
+      {tab === "demo" && <DemoProject onBack={() => setTab("builds")} />}
 
       <footer><span className="footer-mark">C</span> CIRCUITCRAFT <i /> PLAN IT. VERIFY IT. BUILD IT.</footer>
     </main>
