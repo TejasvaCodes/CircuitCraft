@@ -73,7 +73,7 @@ export default function App() {
 
       <section className="hero">
         <div className="eyebrow">FROM IDEA TO BUILD PLAN</div>
-        <h1>Your next hardware idea,<br /><span.engineering>engineered step by step.</span></h1>
+        <h1>Your next hardware idea,<br /><span>engineered step by step.</span></h1>
         <p>Turn a rough electronics idea into a clear starting plan, component list and build sequence.</p>
       </section>
 
